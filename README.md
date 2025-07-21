@@ -28,8 +28,7 @@
 
 ## 📸 Live Demo
 
-[🔗 Live Demo Link](https://yourusername.github.io/golu-assistant)  
-*(Replace with your actual GitHub Pages link once deployed)*
+[🔗 Live Demo Link] https://github.com/darkghost24/golu-assistant
 
 ---
 
