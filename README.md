@@ -60,7 +60,7 @@ Golu is designed to feel like a cute Bengali baby assistant 👶 who helps you s
 
 ## 🧠 Author
 
-Made with ❤️ by [Your Name]  
+Made with ❤️ by Chanchal Kaity.  
 Project inspired by the idea of creating a fun and helpful assistant with a personality.
 
 ---
