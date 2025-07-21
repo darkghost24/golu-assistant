@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+  <div class="container">
+  
+    <div id="golu-avatar">
+      <div class="head">
+        <div class="ear left-ear"></div>
+        <div class="ear right-ear"></div>
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+        <div class="cheek left-cheek"></div>
+        <div class="cheek right-cheek"></div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="body">
+      </div>
+    </div>
+
+    <div class="status-indicator" id="status">Ready</div>
+    <div class="button-group">
+      <button onclick="startListening()" id="micButton">🎤 Speak</button>
+      <button onclick="stopListening()" id="stopButton" disabled>✋ Stop</button>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="textInput" placeholder="Type your message here... ✍️" 
+             onkeypress="handleKeyPress(event)">
+      <div class="button-group">
+        <button onclick="sendText()">Send 💬</button>
+        <button onclick="clearConversation()">Clear 🗑️</button>
+      </div>
+    </div>
+
+    <div id="output"></div>
+
+    <div class="command-history" id="commandHistory">
+      <div>Recent commands will appear here</div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
