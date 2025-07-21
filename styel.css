@@ -1,0 +1,330 @@
+:root {
+  --primary-color: #006255;
+  --secondary-color: #53ccd9;
+  --background-color: #FFEBEE;
+  --text-color: #333;
+  --card-color: #FFF3F3;
+}
+
+body {
+  font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.container {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--secondary-color);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#output {
+  margin-top: 20px;
+  font-size: 20px;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--card-color);
+  border: 2px solid var(--secondary-color);
+  min-height: 80px;
+  width: 90%;
+  margin: 20px auto;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  text-align: left;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+#output a {
+  color: #d63384;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#textInput {
+  padding: 12px 15px;
+  font-size: 16px;
+  width: 70%;
+  border: 2px solid var(--secondary-color);
+  border-radius: 12px;
+  margin: 10px 0;
+  background-color: var(--card-color);
+  transition: all 0.3s ease;
+}
+
+#textInput:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 64, 129, 0.5);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#golu-avatar {
+  margin: 20px auto;
+  width: 200px;
+  height: 260px;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Ears */
+.ear {
+  width: 38px;
+  height: 38px;
+  background: #ffc1e3;
+  border-radius: 50%;
+  position: absolute;
+  top: -22px;
+  z-index: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.left-ear { left: -18px; }
+.right-ear { right: -18px; }
+
+/* Cheeks */
+.cheek {
+  width: 18px;
+  height: 10px;
+  background: #ffb6d5;
+  border-radius: 50%;
+  position: absolute;
+  top: 95px;
+  opacity: 0.7;
+  z-index: 2;
+}
+.left-cheek { left: 22px; }
+.right-cheek { right: 22px; }
+
+/* Nose */
+.nose {
+  width: 14px;
+  height: 10px;
+  background: #d63384;
+  border-radius: 60% 60% 80% 80%;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  z-index: 3;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Eyes */
+.eye {
+  width: 26px;
+  height: 26px;
+  background: #222;
+  border-radius: 50%;
+  position: absolute;
+  top: 55px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 8px #fff3f3;
+  overflow: hidden;
+}
+.eye::after {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: 13px;
+  opacity: 0.7;
+}
+.left-eye { left: 32px; }
+.right-eye { right: 32px; }
+
+/* Head */
+.head {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at 60% 30%, #fff 70%, #ffc1e3 100%);
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 0 0 8px #fff3f3;
+  border: 3px solid #ff80ab;
+  z-index: 2;
+}
+
+/* Mouth (smile) */
+.mouth {
+  width: 40px;
+  height: 18px;
+  border-bottom: 4px solid #d63384;
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 40px 40px;
+  background: transparent;
+  transition: all 0.3s ease;
+  z-index: 4;
+}
+
+/* Mouth open when speaking */
+.listening #golu-avatar .mouth {
+  height: 14px;
+  width: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border-bottom: 3px solid #d63384;
+  box-shadow: 0 2px 8px #d63384 inset;
+}
+
+/* Blinking animation */
+@keyframes blink {
+  0%, 95%, 100% { transform: scaleY(1); }
+  96%, 97%, 98%, 99% { transform: scaleY(0.1); }
+}
+.eye {
+  animation: blink 5s infinite;
+}
+
+.hand {
+  width: 30px;
+  height: 60px;
+  background-color: #ffc1e3;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
+
+.wave-hand {
+  left: -20px;
+  transform-origin: top right;
+  animation: wave 2.5s infinite ease-in-out;
+}
+
+.other-hand {
+  right: -20px;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-25deg); }
+  60% { transform: rotate(10deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.listening #golu-avatar .mouth {
+  height: 10px;
+  width: 60px;
+  border-radius: 5px;
+  background: #d63384;
+  border-bottom: none;
+}
+
+.typing #golu-avatar .mouth {
+  height: 5px;
+  width: 30px;
+  border-radius: 5px;
+  background: #d63384;
+  border-bottom: none;
+}
+
+.status-indicator {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.command-history {
+  width: 90%;
+  margin: 20px auto;
+  max-height: 150px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.command-item {
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.command-item:hover {
+  background: #f5f5f5;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+  #textInput {
+    width: 90%;
+  }
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  #output {
+    font-size: 18px;
+    padding: 15px;
+  }
+}
